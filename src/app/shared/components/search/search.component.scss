@@ -1,0 +1,47 @@
+.card {
+    // Max-width is not necessary for responsive layouts, you can use flexbox to handle responsiveness.
+  }
+  
+  #category, #subcategory {
+    width: 100%; /* Make dropdowns full width on small screens */
+  }
+  
+  .form-select {
+    border-radius: 12px;
+    height: 48px;
+  }
+  
+  button {
+    border-radius: 0.25rem;
+  }
+  
+  .w-45 {
+    width: 45%;
+  }
+  
+  .fw-bold {
+    font-weight: bold;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 15px;
+  }
+  
+  .container {
+    max-width: 100%; /* Ensure container takes full width */
+  }
+  
+  .card .d-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card .d-flex span {
+    font-size: 1.25rem;
+  }
+  
+  .search-btn {
+    border-radius: 12px;
+    width: 100%; /* Make the button full width on small screens */
+    height: 44px;
+  }
+  

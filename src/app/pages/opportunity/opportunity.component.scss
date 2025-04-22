@@ -1,0 +1,11 @@
+.form-control{
+    border-radius: 12px !important;
+    height: 38px !important;
+}
+label{
+    margin-bottom: 5px;
+}
+:host::ng-deep .ng-select-container{
+    height: 38px !important;
+    border-radius: 12px;
+}

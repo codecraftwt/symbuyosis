@@ -1,0 +1,107 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: #fff;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.avatar {
+  width: 70px;
+  border-radius: 34px;
+  height: 70px;
+  background-color: #D9D9D9;
+}
+
+.sidebar.collapsed .avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.sidebar.collapsed .profile {
+  margin-bottom: 20px;
+}
+
+.sidebar.collapsed .username,
+.sidebar.collapsed .company {
+  display: none;
+}
+
+.username{
+  font-family: 'Poppins';
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.sidebar.collapsed .menu li {
+  padding: 10px 0px;
+  .label {
+    display: none;
+  }
+  
+}
+
+.sidebar.collapsed .icon {
+  margin-right: 0;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.icon {
+  width: 24px;
+  text-align: center;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.label {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.collapse-btn {
+  position: absolute;
+  top: -3px;
+  left: 5px;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.collapse-btn:hover {
+  background-color: transparent;
+}
