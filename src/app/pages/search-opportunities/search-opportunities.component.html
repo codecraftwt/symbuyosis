@@ -11,14 +11,16 @@
 
 <div class="d-flex justify-content-start align-items-center">
     <div class="d-flex align-items-center">
-        <h1 class="h2 ps-3">New Opportunities</h1>
+        <h1 class="h2">New Opportunities</h1>
     </div>
 
     <div class="d-flex align-items-center ms-5">
         <div class="form-group">
             <select id="category" class="form-select" [(ngModel)]="selectedOpportunity">
                 <option value="" disabled selected>Filter</option>
-                <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+                @for (category of categories; track $index) {
+                <option [value]="category">{{ category }}</option>
+                }
             </select>
         </div>
     </div>
