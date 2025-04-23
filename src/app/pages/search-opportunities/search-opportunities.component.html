@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-start align-items-center">
+    <div>
+        <h1 class="h2 mb-3">Search Opportunities</h1>
+    </div>
+</div>
+<p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius mi sit amet nibh pellentesque,
+</p>
+<app-search></app-search>
+
+<div class="hr"></div>
+
+<div class="d-flex justify-content-start align-items-center">
+    <div class="d-flex align-items-center">
+        <h1 class="h2 ps-3">New Opportunities</h1>
+    </div>
+
+    <div class="d-flex align-items-center ms-5">
+        <div class="form-group">
+            <select id="category" class="form-select" [(ngModel)]="selectedOpportunity">
+                <option value="" disabled selected>Filter</option>
+                <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<app-card-grid [cards]="[
+        { title: 'Card Placeholder' },
+        { title: 'Card Placeholder' },
+        { title: 'Card Placeholder' },
+    ]"></app-card-grid>

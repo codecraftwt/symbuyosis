@@ -12,9 +12,9 @@
 
     <ul class="menu mt-4">
         @for (item of menuItems; track $index) {
-        <li [routerLink]="[item.route]" routerLinkActive="active">
+        <li class="gap-2" [routerLink]="[item.route]" routerLinkActive="active">
             <img src="../../../../assets/Radio_button.svg" alt="" />
-            <span class="icon">{{ item.icon }}</span>
+            <!-- <span class="icon">{{ item.icon }}</span> -->
             @if(!isCollapsed2){
             <span class="sidebar-label">{{ item.name }}</span>
             }

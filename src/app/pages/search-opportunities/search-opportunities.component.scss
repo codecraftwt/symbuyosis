@@ -1,0 +1,15 @@
+
+@import 'color';
+@import 'font';
+@import 'variable';
+
+.subtitle{
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: $primary-black;
+}
+.hr{
+    border: 1px solid $dark-border-gray;
+    margin: 24px 0px 24px;
+}

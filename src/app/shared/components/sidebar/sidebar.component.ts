@@ -20,9 +20,10 @@ export class SidebarComponent {
 
   menuItems = [
     { name: 'Dashboard', icon: '', route: '/dashboard' },
+    { name: 'Opportunity', icon: '', route: '/opportunity' },
     { name: 'Opportunities', icon: '', route: '/opportunities' },
-    { name: 'Menu Item 1', icon: '', route: '/menu1' },
-    { name: 'Menu Item 2', icon: '', route: '/menu2' },
+    { name: 'Post Opportunity', icon: '', route: '/post-an-opportunity' },
+    { name: 'Search Opportunities', icon: '', route: '/search-opportunities' },
     { name: 'Menu Item 3', icon: '', route: '/menu3' },
     { name: 'Menu Item 4', icon: '', route: '/menu4' },
   ];
