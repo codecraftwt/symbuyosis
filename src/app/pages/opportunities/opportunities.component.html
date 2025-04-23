@@ -11,7 +11,9 @@
         <div class="form-group">
             <select id="category" class="form-select" [(ngModel)]="selectedPostedOpportunity">
                 <option value="" disabled selected>Category</option>
-                <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+                @for (category of categories; track $index) {
+                <option [value]="category">{{ category }}</option>
+                }
             </select>
         </div>
 
@@ -38,7 +40,9 @@
         <div class="form-group">
             <select id="category" class="form-select" [(ngModel)]="selectedEnagagedOpportunity">
                 <option value="" disabled selected>Category</option>
-                <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+                @for (category of categories; track $index) {
+                <option [value]="category">{{ category }}</option>
+                }
             </select>
         </div>
     </div>

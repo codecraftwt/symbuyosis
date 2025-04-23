@@ -15,5 +15,6 @@ export class OpportunitiesComponent {
   engagedOpportunities = 4;
   selectedPostedOpportunity = '';
   selectedEnagagedOpportunity = '';
+  categories = []
 
 }
