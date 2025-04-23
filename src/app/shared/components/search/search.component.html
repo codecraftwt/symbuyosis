@@ -1,21 +1,23 @@
-<div class="container">
+<div class="container p-0">
   <div class="row justify-content-start">
-    <div class="col-12 col-md-12 col-lg-6">
+    <div class="col-12 col-md-12 col-lg-6 p-0">
       <div class="card d-flex flex-column flex-md-row p-3 justify-content-around gap-3 border-0">
 
         <div class="form-group w-100">
           <select id="category" class="form-select" [(ngModel)]="selectedCategory">
             <option value="" disabled selected>Category</option>
-            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+            @for (category of categories; track $index) {
+              <option  [value]="category">{{ category }}</option>
+            }
           </select>
         </div>
 
         <div class="form-group w-100">
           <select id="subcategory" class="form-select" [(ngModel)]="selectedSubcategory" [disabled]="!selectedCategory">
             <option value="" disabled selected>Subcategory</option>
-            <option *ngFor="let subcategory of subcategories[selectedCategory] || []" [value]="subcategory">
-              {{ subcategory }}
-            </option>
+            @for (subcategory of subcategories[selectedCategory] || []; track $index) {
+              <option  [value]="subcategory">{{ subcategory }}</option>
+            }
           </select>
         </div>
 
