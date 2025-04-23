@@ -21,5 +21,9 @@ export const routes: Routes = [
         path: 'post-an-opportunity',
         loadComponent: () => import('./pages/post-an-opportunity/post-an-opportunity.component').then(c => c.PostAnOpportunityComponent)
     },
+    {
+        path: 'search-opportunities',
+        loadComponent: () => import('./pages/search-opportunities/search-opportunities.component').then(c => c.SearchOpportunitiesComponent)
+    },
 
 ];
