@@ -8,8 +8,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card-grid.component.scss'
 })
 export class CardGridComponent {
-  @Input() heading: string = 'Heading';
-
   @Input() cards: any[] = [
     { id: 1, title: 'Card Placeholder' },
     { id: 2, title: 'Card Placeholder' },

@@ -1,26 +1,24 @@
-
-<div class="sidebar" [class.collapsed]="isCollapsed2" (mouseover)="mouseover()" (mouseout)="mouseout()"> 
-    <button class="btn  collapse-btn" (click)="onToggleCollapse()">
+<div class="sidebar" [class.collapsed]="isCollapsed2" (mouseover)="mouseover()" (mouseout)="mouseout()">
+    <button class="btn collapse-btn" (click)="onToggleCollapse()">
         <img src="../../../../assets/icons/fi-rr-align-left.svg" alt="" srcset="">
     </button>
     <div class="profile d-flex flex-column align-items-center justify-content-center">
-      <div class="avatar" [class.collapsed]="isCollapsed2"></div>
-      @if(!isCollapsed2){
-          <div class="username mt-2">{{ user.name }}</div>
-          <div class="company">{{ user.company }}</div>
-      }
+        <div class="avatar" [class.collapsed]="isCollapsed2"></div>
+        @if(!isCollapsed2){
+        <div class="sidebar-profile-name my-3">{{ user.name }}</div>
+        <div class="label sidebar-profile-company-name">{{ user.company }}</div>
+        }
     </div>
-  
-    <ul class="menu mt-3">
+
+    <ul class="menu mt-4">
         @for (item of menuItems; track $index) {
-            <li >
-              <img src="../../../../assets/Radio_button.svg" alt="" />
-              <span class="icon">{{ item.icon }}</span>
-              @if(!isCollapsed2){
-                  <span class="label" >{{ item.name }}</span>
-              }
-            </li>
+        <li [routerLink]="[item.route]" routerLinkActive="active">
+            <img src="../../../../assets/Radio_button.svg" alt="" />
+            <span class="icon">{{ item.icon }}</span>
+            @if(!isCollapsed2){
+            <span class="sidebar-label">{{ item.name }}</span>
+            }
+        </li>
         }
     </ul>
-  </div>
-  
+</div>

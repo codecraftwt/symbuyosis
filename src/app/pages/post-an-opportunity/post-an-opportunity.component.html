@@ -1,0 +1,60 @@
+<div class="post-an-opportunities">
+    <!-- Title -->
+    <h1 class="title">{{ opportunities.title }}</h1>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card opportunity-container">
+                <div class="card-body">
+                    
+                    <img class="hero-img" src="../../../assets/images/post-an-opportunity.jpg" [alt]="opportunities.tagline" />
+
+                    <h2 class="tagline">{{ opportunities.tagline }}</h2>
+                    <p class="field-value">{{ opportunities.description }}</p>
+
+                    <p class="field-label">Opportunity :</p>
+                    <h6 class="field-value">{{ opportunities.opportunity }}</h6>
+
+                    <p class="field-label">Format Type :</p>
+                    <h6 class="field-value">{{ opportunities.format_type }}</h6>
+
+                    <p class="field-label">Target Customer :</p>
+                    <h6 class="field-value">{{ opportunities.target_customer }}</h6>
+
+                    <p class="field-label">Target Region :</p>
+                    <h6 class="field-value">{{ opportunities.target_region }}</h6>
+
+                    <p class="field-label">Product Type/Subtype :</p>
+                    <h6 class="field-value">{{ opportunities.product_type_subtype }}</h6>
+
+                    <p class="field-label">Average Product Price :</p>
+                    <h6 class="field-value">£{{ opportunities.averagePrice }}</h6>
+
+                    <p class="field-label">Average Volume Monthly :</p>
+                    <h6 class="field-value">{{ opportunities.volumeMonthly }}</h6>
+
+                    <p class="field-label">Date posted :</p>
+                    <h6 class="field-value">{{ opportunities.datePosted }}</h6>
+
+                    <p class="field-label">Link :</p>
+                    <a [href]="[opportunities.link]">
+                        <h6 class="">{{ opportunities.link }}</h6>
+                    </a>
+
+                </div>
+            </div>
+            <div class="actions mt-5">
+                <button class="btn btn-light" (click)="onSaveDraft()">
+                    Edit
+                </button>
+                <button class="btn btn-dark" (click)="onSaveDraft()">
+                    Save as draft
+                </button>
+                <button type="submit" class="btn btn-dark" (click)="onPost()">
+                    Post
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

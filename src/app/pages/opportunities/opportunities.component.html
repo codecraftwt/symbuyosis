@@ -1,0 +1,51 @@
+<div class="d-flex justify-content-start align-items-center">
+    <div class="d-flex align-items-center">
+        <h1 class="h2 ps-3">Posted Opportunities</h1>
+        <h5 class="mx-5 mb-0">
+            Posted
+            <span class="count">{{ postedOpportunities }}</span>
+        </h5>
+    </div>
+
+    <div class="d-flex align-items-center ms-5">
+        <div class="form-group">
+            <select id="category" class="form-select" [(ngModel)]="selectedPostedOpportunity">
+                <option value="" disabled selected>Category</option>
+                <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+            </select>
+        </div>
+
+        <button class="btn btn-outline-dark ms-5">
+            Create New Opportunity
+        </button>
+    </div>
+</div>
+
+<app-card-grid [cards]="[
+        { title: 'Card Placeholder' },
+        { title: 'Card Placeholder' },
+        { title: 'Card Placeholder' },
+    ]"></app-card-grid>
+
+<div class="d-flex justify-content-start align-items-center">
+    <div class="d-flex align-items-center">
+        <h1 class="h2 ps-3">Engaged Opportunities</h1>
+        <h5 class="mx-5 mb-0">Enagaged <span class="count">{{engagedOpportunities}}</span>
+        </h5>
+    </div>
+
+    <div class="d-flex align-items-center ms-5">
+        <div class="form-group">
+            <select id="category" class="form-select" [(ngModel)]="selectedEnagagedOpportunity">
+                <option value="" disabled selected>Category</option>
+                <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<app-card-grid [cards]="[
+{ title: 'Card Placeholder' },
+{ title: 'Card Placeholder' },
+{ title: 'Card Placeholder' },
+]"></app-card-grid>

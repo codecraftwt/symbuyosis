@@ -1,36 +1,31 @@
 <div class="container">
-    <div class="row justify-content-start">
-      <div class="col-12 col-md-12 col-lg-6">
-        <div class="card d-flex flex-column flex-md-row p-3 shadow-sm justify-content-around gap-3">
-          <div class="d-flex align-items-center justify-content-between mb-3 mb-md-0">
-            <span class="fw-bold">Search</span>
-          </div>
-  
-          <!-- <div class="d-flex flex-column flex-md-row gap-4"> -->
-            <!-- Category Dropdown -->
-            <div class="form-group w-100">
-              <select id="category" class="form-select" [(ngModel)]="selectedCategory">
-                <option value="" disabled selected>Category</option>
-                <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
-              </select>
-            </div>
-  
-            <!-- Subcategory Dropdown -->
-            <div class="form-group w-100">
-              <select id="subcategory" class="form-select" [(ngModel)]="selectedSubcategory" [disabled]="!selectedCategory">
-                <option value="" disabled selected>Subcategory</option>
-                <option *ngFor="let subcategory of subcategories[selectedCategory] || []" [value]="subcategory">
-                  {{ subcategory }}
-                </option>
-              </select>
-            </div>
-          <!-- </div> -->
-  
-          <div class="d-flex justify-content-between mt-3 mt-md-0">
-            <button type="button" class="btn btn-outline-dark search-btn" (click)="onSearch()">Search</button>
-          </div>
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-12 col-lg-6">
+      <div class="card d-flex flex-column flex-md-row p-3 shadow-sm justify-content-around gap-3">
+        <div class="d-flex align-items-center justify-content-between mb-3 mb-md-0">
+          <span class="fw-bold">Search</span>
+        </div>
+
+        <div class="form-group w-100">
+          <select id="category" class="form-select" [(ngModel)]="selectedCategory">
+            <option value="" disabled selected>Category</option>
+            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+          </select>
+        </div>
+
+        <div class="form-group w-100">
+          <select id="subcategory" class="form-select" [(ngModel)]="selectedSubcategory" [disabled]="!selectedCategory">
+            <option value="" disabled selected>Subcategory</option>
+            <option *ngFor="let subcategory of subcategories[selectedCategory] || []" [value]="subcategory">
+              {{ subcategory }}
+            </option>
+          </select>
+        </div>
+
+        <div class="d-flex justify-content-between mt-3 mt-md-0">
+          <button type="button" class="btn btn-outline-dark search-btn" (click)="onSearch()">Search</button>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
