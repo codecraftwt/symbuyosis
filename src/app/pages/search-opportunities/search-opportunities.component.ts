@@ -11,6 +11,6 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './search-opportunities.component.scss'
 })
 export class SearchOpportunitiesComponent {
-  categories=[]
+  categories = []
   selectedOpportunity = '';
 }
