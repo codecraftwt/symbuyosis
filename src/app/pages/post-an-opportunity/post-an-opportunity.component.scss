@@ -1,0 +1,87 @@
+@import 'color';
+@import 'font';
+@import 'variable';
+
+.post-an-opportunity {
+  padding: 24px;
+  background: $white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  .opportunity-container{
+    border: solid 1px $border-gray;
+    border-radius: 8px;
+  }
+
+  .title{
+    font-family: 'Manrope';
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0.3px;
+    color: $secondary-black;
+}
+}
+
+  .hero-img {
+    width: 100%;
+    height: auto;
+    margin: 16px 0;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  .tagline {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    margin-bottom: 8px;
+    color: $label-gray;
+  }
+
+  .field-label { 
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    color: $label-gray;
+    margin-bottom: 0px;
+  }
+  .field-value {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    color: $primary-black;
+    margin-bottom: 10px;
+   }
+
+  .actions {
+    display: flex;
+    gap: 12px;
+
+    .btn {
+      flex: 1;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+
+      &.draft {
+        background: transparent;
+        color: $secondary-black;
+        border: 1px solid $border-gray;
+      }
+      &.post {
+        background: $blue2;
+        color: $white;
+        border: none;
+      }
+    }
+  }
+

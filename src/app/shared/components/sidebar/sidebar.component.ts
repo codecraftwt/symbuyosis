@@ -1,30 +1,17 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
-  isCollapsed2: boolean = false; // Default value for isCollapsed2
-  @Input() isCollapsed: boolean = false; // Receive isCollapsed from the parent component
-  @Output() toggleCollapse = new EventEmitter<void>(); // Emit collapse toggle event
-
-  // user ={
-  //   name: 'John Doe',
-  //   company: 'Company',
-  // }
-
-  // menuItems = [
-  //   { name: 'Dashboard', icon: '', route: '/dashboard' },
-  //   { name: 'Home', icon: '', route: '/home' },
-  //   { name: 'Menu Item 1', icon: '', route: '/menu1' },
-  //   { name: 'Menu Item 2', icon: '', route: '/menu2' },
-  //   { name: 'Menu Item 3', icon: '', route: '/menu3' },
-  //   { name: 'Menu Item 4', icon: '', route: '/menu4' },
-  // ];
+  isCollapsed2: boolean = false;
+  @Input() isCollapsed: boolean = false;
+  @Output() toggleCollapse = new EventEmitter<void>();
 
   user = {
     name: 'John Smith',
@@ -33,30 +20,23 @@ export class SidebarComponent {
 
   menuItems = [
     { name: 'Dashboard', icon: '', route: '/dashboard' },
-    { name: 'Home', icon: '', route: '/home' },
+    { name: 'Opportunities', icon: '', route: '/opportunities' },
     { name: 'Menu Item 1', icon: '', route: '/menu1' },
     { name: 'Menu Item 2', icon: '', route: '/menu2' },
     { name: 'Menu Item 3', icon: '', route: '/menu3' },
     { name: 'Menu Item 4', icon: '', route: '/menu4' },
   ];
 
-  // isCollapsed = false;
-
-  // toggleCollapse() {
-  //   this.isCollapsed = !this.isCollapsed;
-  // }
   onToggleCollapse() {
-    // debugger
-    // this.isCollapsed2 = !this.isCollapsed2; // Toggle the local isCollapsed2 state
     this.toggleCollapse.emit();
   }
-  mouseover(){
-    if(this.isCollapsed){
+  mouseover() {
+    if (this.isCollapsed) {
       this.isCollapsed2 = false;
     }
   }
-  mouseout(){
-    if(this.isCollapsed){
+  mouseout() {
+    if (this.isCollapsed) {
       this.isCollapsed2 = true;
     }
   }

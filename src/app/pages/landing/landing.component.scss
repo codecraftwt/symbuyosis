@@ -1,5 +1,9 @@
+@import 'color';
+@import 'font';
+@import 'variable';
+
 .card-img{
-    background-color: #D6D6D6 !important;
+    background-color: $card-bg !important;
     height: 300px; 
     border-radius: 12px;
 }

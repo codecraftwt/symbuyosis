@@ -1,7 +1,11 @@
+@import 'color';
+@import 'font';
+@import 'variable';
+
 .sidebar {
   width: 240px;
   height: 100vh;
-  background-color: #fff;
+  background-color:$white;
   padding: 30px 20px;
   box-sizing: border-box;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
@@ -13,6 +17,28 @@
   scrollbar-width: thin;
 }
 
+.sidebar-label{
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0%;
+}
+.sidebar-profile-name{
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0%;
+}
+.sidebar-profile-company-name{
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0%;
+}
+
 .sidebar.collapsed {
   width: 70px;
 }
@@ -21,7 +47,7 @@
   width: 70px;
   border-radius: 34px;
   height: 70px;
-  background-color: #D9D9D9;
+  background-color: $avtar-bg;
 }
 
 .sidebar.collapsed .avatar {
@@ -33,25 +59,26 @@
   margin-bottom: 20px;
 }
 
-.sidebar.collapsed .username,
-.sidebar.collapsed .company {
+.sidebar.collapsed .sidebar-profile-name,
+.sidebar.collapsed .sidebar-profile-company-name {
   display: none;
-}
-
-.username{
-  font-family: 'Poppins';
-    font-size: 18px;
-    font-weight: 400;
 }
 
 .sidebar.collapsed .menu li {
   padding: 10px 0px;
-  .label {
+  .sidebar-label {
     display: none;
   }
-  
-}
 
+}
+li{
+  &.active {
+    color: $blue2;
+  }
+  &.active .icon {
+    color: $blue2;
+  }
+}
 .sidebar.collapsed .icon {
   margin-right: 0;
 }
@@ -73,7 +100,7 @@
 }
 
 .menu li:hover {
-  background-color: #f0f0f0;
+  color: $blue2;
 }
 
 .icon {
@@ -83,18 +110,11 @@
   flex-shrink: 0;
 }
 
-.label {
-  font-size: 14px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .collapse-btn {
   position: absolute;
   top: -3px;
   left: 5px;
-  color: white;
+  color: $white;
   border: none;
   padding: 10px;
   cursor: pointer;

@@ -1,18 +1,25 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-    // {
-    //     path: '',
-    //     redirectTo: 'opportunity',
-    //     pathMatch: 'full'
-    // },
     {
-        path:'',
-        loadComponent:()=>import('./pages/landing/landing.component').then(c=>c.LandingComponent)
+        path: '',
+        loadComponent: () => import('./pages/landing/landing.component').then(c => c.LandingComponent)
+    },
+    {
+        path: 'dashboard',
+        loadComponent: () => import('./pages/dashboard/dashboard.component').then(c => c.DashboardComponent)
     },
     {
         path: 'opportunity',
-        loadComponent: () => import('./pages/opportunity/opportunity.component').then(c=>c.OpportunityComponent)
+        loadComponent: () => import('./pages/opportunity/opportunity.component').then(c => c.OpportunityComponent)
     },
-    
+    {
+        path: 'opportunities',
+        loadComponent: () => import('./pages/opportunities/opportunities.component').then(c => c.OpportunitiesComponent)
+    },
+    {
+        path: 'post-an-opportunity',
+        loadComponent: () => import('./pages/post-an-opportunity/post-an-opportunity.component').then(c => c.PostAnOpportunityComponent)
+    },
+
 ];

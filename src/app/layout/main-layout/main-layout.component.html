@@ -1,7 +1,6 @@
 <app-header></app-header>
 
 <div class="app-container">
-    <!-- <app-sidebar></app-sidebar> -->
     <app-sidebar [isCollapsed]="isCollapsed" (toggleCollapse)="toggleCollapse()"></app-sidebar>
     <div class="main-content" [class.collapsed]="isCollapsed">
       <div class="content-wrapper">
