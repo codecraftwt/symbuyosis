@@ -21,7 +21,7 @@
     "@angular/platform-server": "^18.1.0",
     "@angular/router": "^18.1.0",
     "@angular/ssr": "^18.1.1",
-    "@ng-bootstrap/ng-bootstrap": "^18.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^17.0.1",
     "@ng-select/ng-select": "13.9",
     "@popperjs/core": "^2.11.8",
     "@types/feather-icons": "^4.29.4",
