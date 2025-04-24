@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -8,7 +8,8 @@ import { RouterModule } from '@angular/router';
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
+
   isCollapsed2: boolean = false;
   @Input() isCollapsed: boolean = false;
   @Output() toggleCollapse = new EventEmitter<void>();
@@ -28,17 +29,34 @@ export class SidebarComponent {
     { name: 'Menu Item 4', icon: '', route: '/menu4' },
   ];
 
+  ngOnInit(): void {
+    this.updateCollapseState(window.innerWidth);
+  }
+
   onToggleCollapse() {
     this.toggleCollapse.emit();
   }
+
   mouseover() {
     if (this.isCollapsed) {
       this.isCollapsed2 = false;
     }
   }
+
   mouseout() {
     if (this.isCollapsed) {
       this.isCollapsed2 = true;
     }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: UIEvent) {
+    const w = (event.target as Window).innerWidth;
+    this.updateCollapseState(w);
+  }
+
+  private updateCollapseState(width: number) {
+    const shouldBeCollapsed = width < 1025;
+    this.isCollapsed2 = shouldBeCollapsed;
   }
 }

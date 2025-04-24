@@ -21,4 +21,9 @@ export class OpportunitiesComponent {
     { id: 2, title: 'Card Placeholder', image: '../../../../assets/images/Shea_Butter_Body_Cream.jpg' },
     { id: 3, title: 'Card Placeholder', image: '../../../../assets/images/Hand_Made_Silk_Cushions.jpg' },
   ]
+  engagedcardsData = [
+    { id: 1, title: 'Card Placeholder', image: '../../../../assets/images/Custom_Baby_Sweater.jpg' },
+    { id: 2, title: 'Card Placeholder', image: '../../../../assets/images/Artwork.jpg' },
+    { id: 3, title: 'Card Placeholder', image: '../../../../assets/images/Ethnic_Cushion.jpg' },
+  ]
 }

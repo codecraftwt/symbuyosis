@@ -13,3 +13,9 @@
     font-weight: bold;
   }
   
+  @media (min-width: 1024px) and (max-width: 1199.98px) {
+    .col-custom-lg-4 {
+      flex: 0 0 auto;
+      width: 33.3333%;
+    }
+  }

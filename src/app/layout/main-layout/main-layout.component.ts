@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import { SidebarComponent } from "../../shared/components/sidebar/sidebar.component";
@@ -11,10 +11,25 @@ import { FooterComponent } from "../../shared/components/footer/footer.component
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.scss'
 })
-export class MainLayoutComponent {
+export class MainLayoutComponent implements OnInit {
   isCollapsed = false;
 
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  ngOnInit(): void {
+    this.updateCollapseState(window.innerWidth);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: UIEvent) {
+    const w = (event.target as Window).innerWidth;
+    this.updateCollapseState(w);
+  }
+
+  updateCollapseState(width: number) {
+    const shouldBeCollapsed = width < 1025;
+    this.isCollapsed = shouldBeCollapsed;
   }
 }
