@@ -3,14 +3,17 @@
 @import 'variable';
 
 .placeholder-card {
-    background-color: $card-grid-bg;
-    // border: 1px dashed $dash-border-gray;
+    background-color: $card-grid-bg; 
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 150px;
     height: 610px;
     font-weight: bold;
+
+    img{
+      border-radius: 8px;
+    }
   }
   
   @media (min-width: 1024px) and (max-width: 1199.98px) {

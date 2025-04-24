@@ -63,25 +63,5 @@
   .actions {
     display: flex;
     gap: 12px;
-
-    .btn {
-      flex: 1;
-      padding: 12px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 20px;
-
-      &.draft {
-        background: transparent;
-        color: $secondary-black;
-        border: 1px solid $border-gray;
-      }
-      &.post {
-        background: $blue2;
-        color: $white;
-        border: none;
-      }
-    }
   }
 

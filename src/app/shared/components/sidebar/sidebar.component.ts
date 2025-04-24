@@ -25,7 +25,7 @@ export class SidebarComponent implements OnInit {
     { name: 'Opportunities', icon: '', route: '/opportunities' },
     { name: 'Post Opportunity', icon: '', route: '/post-an-opportunity' },
     { name: 'Search Opportunities', icon: '', route: '/search-opportunities' },
-    { name: 'Menu Item 3', icon: '', route: '/menu3' },
+    { name: 'Menu Item 3', icon: '', route: '/enquire-an-opportunity' },
     { name: 'Menu Item 4', icon: '', route: '/menu4' },
   ];
 

@@ -1,18 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-post-an-opportunity',
+  selector: 'app-enquire-an-opportuntiy',
   standalone: true,
   imports: [],
-  templateUrl: './post-an-opportunity.component.html',
-  styleUrl: './post-an-opportunity.component.scss'
+  templateUrl: './enquire-an-opportuntiy.component.html',
+  styleUrl: './enquire-an-opportuntiy.component.scss'
 })
-export class PostAnOpportunityComponent implements OnInit {
-
+export class EnquireAnOpportuntiyComponent {
   public opportunities = {
-    title: 'Post an Opportunity',
+    title: 'Enquire an Opportunity',
     imageUrl: 'https://picsum.photos/300/200?random=1',
-    tagline: 'Hand Knitted Socks',
+    tagline: 'Coffee Creams - Victorian Sweet Jar',
     description: 'Full length hand-knitted socks made from certified Shetland wool.',
     opportunity: 'We are one of the few makers of Shetland wool socks that are certified.',
     format_type: 'Physical Package / Inserts',
@@ -25,12 +24,6 @@ export class PostAnOpportunityComponent implements OnInit {
     link: 'https://www.thedorothydays.com/products/natural-shetland-hand-knitted-bed-socks-british-wool'
   };
 
-  constructor() { }
-
-  ngOnInit(): void {
-
-  }
-
-  protected onPost() { }
-  protected onSaveDraft() { }
+  protected onEnquire() { }
+  protected onBookMarked() { }
 }
