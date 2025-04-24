@@ -33,7 +33,7 @@
 
   .tagline {
     font-family: 'Poppins';
-    font-weight: 700;
+    font-weight: 500;
     font-size: 24px;
     line-height: 24px;
     letter-spacing: 0px;
@@ -43,19 +43,19 @@
 
   .field-label { 
     font-family: 'Poppins';
-    font-weight: 600;
+    font-weight: 500;
     font-size: 15px;
-    line-height: 24px;
-    letter-spacing: 0.25px;
+    line-height: 21.33px;
+    letter-spacing: 0.22px;
     color: $label-gray;
     margin-bottom: 0px;
   }
   .field-value {
     font-family: 'Poppins';
-    font-weight: 600;
+    font-weight: 400;
     font-size: 15px;
-    line-height: 24px;
-    letter-spacing: 0.25px;
+    line-height: 21.33px;
+    letter-spacing: 0.22px;
     color: $primary-black;
     margin-bottom: 10px;
    }
@@ -63,5 +63,13 @@
   .actions {
     display: flex;
     gap: 12px;
+
+    .btn {
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    }
   }
 
