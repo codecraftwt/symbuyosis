@@ -13,4 +13,9 @@ import { FormsModule } from '@angular/forms';
 export class SearchOpportunitiesComponent {
   categories = []
   selectedOpportunity = '';
+  cardsData = [
+    { id: 1, title: 'Card Placeholder', image: '../../../../assets/images/Hand_Knitted_Socks.jpg' },
+    { id: 2, title: 'Card Placeholder', image: '../../../../assets/images/Shea_Butter_Body_Cream.jpg' },
+    { id: 3, title: 'Card Placeholder', image: '../../../../assets/images/Hand_Made_Silk_Cushions.jpg' },
+  ]
 }
