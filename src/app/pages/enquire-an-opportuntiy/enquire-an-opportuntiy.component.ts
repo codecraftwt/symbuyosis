@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
-
+import { Component, inject, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-enquire-an-opportuntiy',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './enquire-an-opportuntiy.component.html',
   styleUrl: './enquire-an-opportuntiy.component.scss'
 })
 export class EnquireAnOpportuntiyComponent {
+  private modalService = inject(NgbModal);
+  public enquiryText = "";
+
   public opportunities = {
     title: 'Enquire an Opportunity',
     imageUrl: 'https://picsum.photos/300/200?random=1',
@@ -24,6 +29,11 @@ export class EnquireAnOpportuntiyComponent {
     link: 'https://www.thedorothydays.com/products/natural-shetland-hand-knitted-bed-socks-british-wool'
   };
 
-  protected onEnquire() { }
+  protected onEnquire(content: TemplateRef<any>) {
+    this.modalService.open(content, { centered: true });
+  }
+
   protected onBookMarked() { }
+
+  protected onSubmit() { }
 }

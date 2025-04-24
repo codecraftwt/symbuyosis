@@ -2,7 +2,7 @@
 @import 'font';
 @import 'variable';
 
-.post-an-opportunity {
+.opportunities-card {
   padding: 24px;
   background: $white;
   border-radius: 12px;
@@ -73,62 +73,28 @@
     }
   }
 
-.enquiry-modal {
-  position: relative;
-  background: #fff;
-  border-radius: 8px;
-  padding: 24px;
-  width: 100%;
-  // max-width: 400px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+//   .actions {
+//     display: flex;
+//     gap: 12px;
 
-.enquiry-modal .close-btn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: transparent;
-  border: none;
-  font-size: 20px;
-  line-height: 1;
-  cursor: pointer;
-}
+//     .btn {
+//       flex: 1;
+//       padding: 12px;
+//       border-radius: 8px;
+//       font-weight: 600;
+//       font-size: 14px;
+//       line-height: 20px;
 
-.enquiry-title {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 600;
-}
+//       &.draft {
+//         background: transparent;
+//         color: $secondary-black;
+//         border: 1px solid $border-gray;
+//       }
+//       &.post {
+//         background: $blue2;
+//         color: $white;
+//         border: none;
+//       }
+//     }
+//   }
 
-.enquiry-input {
-  width: 100%;
-  min-height: 100px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 8px 12px;
-  font-size: 14px;
-  resize: vertical;
-  outline: none;
-  transition: border-color .2s;
-}
-.enquiry-input:focus {
-  border-color: #888;
-}
-
-.submit-btn {
-  align-self: flex-start;
-  padding: 10px 24px;
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background .2s;
-}
-.submit-btn:hover {
-  background: #333;
-}
