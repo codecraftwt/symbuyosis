@@ -5,3 +5,17 @@
 .count{
     color: $count-color;
 }
+
+//small laptop and tablet view
+@media (max-width: 1024px) {
+    .count-title{
+        display: flex;
+        gap: 5px;
+        margin: 0px !important;
+    }
+}
+@media (max-width: 768px) {
+   
+}
+
+@media (max-width: 425px) {}

@@ -19,7 +19,7 @@ export class OpportunityComponent implements OnInit {
   maxCheckboxSelection = 2;
   minEndDate: string | null = null;
 
-  primaryCategoryOptions = ['Man', 'Woman'];
+  primaryCategoryOptions = ['Men', 'Woman'];
   regionOptions = ['Europe', 'USA'];
   formatTypeOptions = ['Inserts', 'Email Inserts', 'Packaging', 'Outside print', 'Stamp'];
 
@@ -34,7 +34,7 @@ export class OpportunityComponent implements OnInit {
       payment: ['', Validators.required],
       customerType: ['', Validators.required],
       primaryCategories: this.fb.array([], [this.minSelectedCheckboxes(1)]),
-      targetRegions: this.fb.array([], [this.minSelectedCheckboxes(1)]),
+      targetRegions: ['', Validators.required],
       productType: ['', Validators.required],
       subProductType: ['', Validators.required],
       price: ['', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
@@ -90,9 +90,9 @@ export class OpportunityComponent implements OnInit {
     return this.opportunityForm.get('primaryCategories') as FormArray;
   }
 
-  get targetRegions(): FormArray {
-    return this.opportunityForm.get('targetRegions') as FormArray;
-  }
+  // get targetRegions(): FormArray {
+  //   return this.opportunityForm.get('targetRegions') as FormArray;
+  // }
 
   get formatTypes(): FormArray {
     return this.opportunityForm.get('formatTypes') as FormArray;
@@ -116,6 +116,10 @@ export class OpportunityComponent implements OnInit {
   
   get subProductTypeControl(): FormControl {
     return this.opportunityForm.get('subProductType') as FormControl;
+  }
+
+  get targetRegionControl(): FormControl {
+    return this.opportunityForm.get('targetRegions') as FormControl;
   }
 
   updateEndDateMin(): void {
@@ -147,7 +151,6 @@ export class OpportunityComponent implements OnInit {
   onSubmit(): void {
     if (this.opportunityForm.invalid) {
       this.primaryCategories.markAsTouched();
-      this.targetRegions.markAsTouched();
       this.formatTypes.markAsTouched();
       this.opportunityForm.markAllAsTouched();
   

@@ -1,7 +1,5 @@
-<!-- post-an-opportunity.component.html -->
 <div class="opportunities-card">
-    <!-- Title -->
-    <h1 class="title">{{ opportunities.title }}</h1>
+    <h1 class="h2 mb-3">{{ opportunities.title }}</h1>
 
     <div class="row">
         <div class="col-lg-4">
@@ -38,27 +36,42 @@
                         <h6 class="">{{ opportunities.link }}</h6>
                     </a>
                 </div>
-            </div>
-            <div class="actions mt-5">
-                <button class="btn btn-light" (click)="onEdit()">
-                    Edit
-                </button>
-                <button class="btn btn-dark" (click)="onSaveDraft()">
-                    Save as draft
-                </button>
-                <button class="btn btn-dark" (click)="onPost()">
-                    Post
-                </button>
-            </div>
-            <div class="actions mt-5">
-                <button class="btn btn-dark w-50" (click)="onEnquire()">
-                    Enquire
-                </button>
-                <button type="button" class="btn btn-outline-dark"
-                    (click)="onBookMarked()" aria-label="Bookmark">
-                    <i class="bi bi-bookmark" aria-hidden="true"></i>
-                </button>
+                @if (isPost) {
+                <div class="post-actions my-4 px-1">
+                    <button class="btn btn-light" (click)="onEdit()">
+                        Edit
+                    </button>
+                    <button class="btn btn-dark" (click)="onSaveDraft()">
+                        Save as draft
+                    </button>
+                    <button class="btn btn-dark" (click)="onPost()">
+                        Post
+                    </button>
+                </div>
+                }
+                @if (isEnquire){
+                <div class="enqiry-actions my-4 px-1">
+                    <button class="btn btn-dark w-50" (click)="onEnquire(content)">
+                        Enquire
+                    </button>
+                    <button type="button" class="btn btn-outline-dark" (click)="onBookMarked()" aria-label="Bookmark">
+                        <i class="bi bi-bookmark" aria-hidden="true"></i>
+                    </button>
+                </div>
+                }
             </div>
         </div>
     </div>
+    <ng-template #content let-modal>
+        <div class="enquiry-modal custom-modal">
+            <button class="close-btn" aria-label="Close" (click)="modal.dismiss()">
+                &times;
+            </button>
+            <h4 class="enquiry-title">Make an enquiry</h4>
+            <textarea class="enquiry-input" placeholder="type" [(ngModel)]="enquiryText"></textarea>
+            <button class="submit-btn" (click)="onSubmit(); modal.close()">
+                Submit
+            </button>
+        </div>
+    </ng-template>
 </div>

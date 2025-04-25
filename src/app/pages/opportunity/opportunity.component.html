@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-start align-items-center">
     <div class="row">
-        <h4 class="h2 ps-3">Post an Opportunity</h4>
+        <h4 class="h2 mb-3">Post an Opportunity</h4>
         <div class="col-4">
             <form [formGroup]="opportunityForm" (ngSubmit)="onSubmit()">
 
@@ -69,18 +69,10 @@
 
                 <!-- Target Regions -->
                 <div class="mb-3">
-                    <label>Target Regions:</label><br />
-                    <div *ngFor="let region of regionOptions">
-                        <input type="checkbox" [checked]="targetRegions.value.includes(region)"
-                            [disabled]="isCheckboxDisabled(targetRegions, region)"
-                            (change)="toggleCheckbox(targetRegions, region)" />
-                        <label class="ms-2">{{ region }}</label>
-                    </div>
-                    <!-- Validation Message -->
-                    <div class="text-danger mt-1"
-                        *ngIf="targetRegions.invalid && (targetRegions.dirty || targetRegions.touched)">
-                        At least one category must be selected.
-                    </div>
+                    <app-custom-select [label]="'Target Regions:'"
+                        [items]="['United Kingdom', 'United States', 'France','Germany']"
+                        [control]="targetRegionControl">
+                    </app-custom-select>
                 </div>
 
                 <!-- Product Type -->
@@ -184,7 +176,7 @@
 
                 <!-- Add Links -->
                 <div class="mb-0">
-                    <label>Main Link:</label>
+                    <label>Add a Link:</label>
                     <input type="text" class="form-control" formControlName="link"
                         [class.is-invalid]="opportunityForm.get('link')?.invalid && opportunityForm.get('link')?.touched" />
                     <div class="text-danger"

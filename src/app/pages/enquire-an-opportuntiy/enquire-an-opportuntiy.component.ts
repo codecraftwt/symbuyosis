@@ -1,21 +1,17 @@
-import { Component, inject, TemplateRef, ViewEncapsulation } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
+import { OpportunityCardComponent } from "../../shared/components/opportunity-card/opportunity-card.component";
 @Component({
   selector: 'app-enquire-an-opportuntiy',
   standalone: true,
-  imports: [FormsModule],
-  encapsulation: ViewEncapsulation.None,
+  imports: [OpportunityCardComponent],
   templateUrl: './enquire-an-opportuntiy.component.html',
   styleUrl: './enquire-an-opportuntiy.component.scss'
 })
 export class EnquireAnOpportuntiyComponent {
-  private modalService = inject(NgbModal);
-  public enquiryText = "";
 
   public opportunities = {
     title: 'Enquire an Opportunity',
-    imageUrl: 'https://picsum.photos/300/200?random=1',
+    imageUrl: '../../../assets/images/coffee_creams_handmade.jpg',
     tagline: 'Coffee Creams - Victorian Sweet Jar',
     description: 'Full length hand-knitted socks made from certified Shetland wool.',
     opportunity: 'We are one of the few makers of Shetland wool socks that are certified.',
@@ -29,11 +25,7 @@ export class EnquireAnOpportuntiyComponent {
     link: 'https://www.thedorothydays.com/products/natural-shetland-hand-knitted-bed-socks-british-wool'
   };
 
-  protected onEnquire(content: TemplateRef<any>) {
-    this.modalService.open(content, { centered: true });
-  }
+  protected onBookMarked(event: any) { }
 
-  protected onBookMarked() { }
-
-  protected onSubmit() { }
+  protected onSubmit(enquiryText: string) { }
 }

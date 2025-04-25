@@ -14,12 +14,14 @@ import { FooterComponent } from "../../shared/components/footer/footer.component
 export class MainLayoutComponent implements OnInit {
   isCollapsed = false;
 
-  toggleCollapse() {
-    this.isCollapsed = !this.isCollapsed;
+  ngOnInit(): void {
+    if (typeof window !== 'undefined') {
+      this.updateCollapseState(window.innerWidth);
+    }
   }
 
-  ngOnInit(): void {
-    this.updateCollapseState(window.innerWidth);
+  toggleCollapse() {
+    this.isCollapsed = !this.isCollapsed;
   }
 
   @HostListener('window:resize', ['$event'])

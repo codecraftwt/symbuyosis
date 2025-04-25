@@ -30,7 +30,9 @@ export class SidebarComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.updateCollapseState(window.innerWidth);
+    if (typeof window !== 'undefined') {
+      this.updateCollapseState(window.innerWidth);
+    }
   }
 
   onToggleCollapse() {
