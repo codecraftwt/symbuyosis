@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './search-opportunities.component.scss'
 })
 export class SearchOpportunitiesComponent {
-  categories = []
+  categories = ['Inserts', 'Email Inserts', 'Packaging', 'Outside print', 'Stamp']
   selectedOpportunity = '';
   cardsData = [
     { id: 1, title: 'Card Placeholder', image: '../../../../assets/images/Hand_Knitted_Socks.jpg' },
