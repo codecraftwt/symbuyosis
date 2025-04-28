@@ -1,6 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
+export const passwordMatchValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+  const password = control.get('password');
+  const confirmPassword = control.get('confirmPassword');
+
+  return password && confirmPassword && password.value !== confirmPassword.value 
+    ? { passwordMismatch: true }
+    : null;
+};
 
 @Component({
   selector: 'app-create-account',
@@ -20,7 +29,7 @@ export class CreateAccountComponent implements OnInit {
   }
 
   protected onSubmit() {
-    this._router.navigate(['layout/']);
+    // this._router.navigate(['layout/']);
     if (this.accountForm.valid) {
       console.log('Form submitted:', this.accountForm.value);
       // Add your form submission logic here
@@ -43,6 +52,12 @@ export class CreateAccountComponent implements OnInit {
   get email(): FormControl {
     return this.accountForm.get('email') as FormControl;
   }
+  get password(): FormControl {
+    return this.accountForm.get('password') as FormControl;
+  }
+  get confirmPassword(): FormControl {
+    return this.accountForm.get('confirmPassword') as FormControl;
+  }
   get termsAndConditions(): FormControl {
     return this.accountForm.get('termsAndConditions') as FormControl;
   }
@@ -51,8 +66,20 @@ export class CreateAccountComponent implements OnInit {
     this.accountForm = this._fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required],
       termsAndConditions: [false, Validators.requiredTrue],
-    })
+    }, { validators: passwordMatchValidator })
   }
 
+  protected checkPassword() {
+    const password = this.accountForm.get('password');
+    const confirmPassword = this.accountForm.get('confirmPassword');
+
+    if (password?.value !== confirmPassword?.value) {
+      confirmPassword?.setErrors({ passwordMismatch: true });
+    } else {
+      confirmPassword?.setErrors(null);
+    }
+  }
 }

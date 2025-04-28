@@ -36,6 +36,40 @@
                 }
             </div>
 
+            <!-- Password -->
+            <div class="mb-4">
+                <label for="password">Password</label>
+                <input id="password" type="password" class="form-control" formControlName="password"
+                    placeholder="Enter your password"
+                    [class.is-invalid]="accountForm.get('password')?.invalid && accountForm.get('password')?.touched" />
+                @if(accountForm.get('password')?.invalid && accountForm.get('password')?.touched){
+                <div class="text-danger">
+                    Password is required.
+                </div>
+                }
+            </div>
+
+            <!-- Confirm password -->
+            <div class="mb-4">
+                <label for="confirm-password">Confirm Password</label>
+                <input id="confirm-password" type="password" class="form-control" formControlName="confirmPassword"
+                    placeholder="Confirm your password" (change)="checkPassword()"
+                    [class.is-invalid]="accountForm.get('confirmPassword')?.invalid && accountForm.get('confirmPassword')?.touched" />
+                @if(confirmPassword.invalid && confirmPassword.touched) {
+                <div class="text-danger">
+                    @if(confirmPassword.errors?.['required']) {
+                    Confirm Password is required.
+                    }
+                </div>
+                }
+
+                @if(confirmPassword.errors?.['passwordMismatch'] && confirmPassword.value) {
+                <div class="text-danger">
+                    Passwords do not match.
+                </div>
+                }
+            </div>
+
             <div class="hr">or</div>
 
             <div class="d-flex justify-content-center align-items-center w-100 my-4 social-btns">
