@@ -29,7 +29,7 @@ export class CreateAccountComponent implements OnInit {
   }
 
   protected onSubmit() {
-    // this._router.navigate(['layout/']);
+    this._router.navigate(['layout/']);
     if (this.accountForm.valid) {
       console.log('Form submitted:', this.accountForm.value);
       // Add your form submission logic here
