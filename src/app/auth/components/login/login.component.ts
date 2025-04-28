@@ -49,7 +49,7 @@ export class LoginComponent {
   private initilizeForm() {
     this.accountForm = this._fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
       termsAndConditions: [false, Validators.requiredTrue],
     })
   }
