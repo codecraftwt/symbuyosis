@@ -40,8 +40,9 @@ export class OpportunityCardComponent {
     this.bookmarkClicked.emit();
   }
 
-  protected onSubmit() {
+  protected onSubmit(content: TemplateRef<any>) {
     this.submitClicked.emit(this.enquiryText);
+    this.modalService.open(content, { centered: true });
   }
 
   protected onEnquire(content: TemplateRef<any>) {

@@ -69,8 +69,20 @@
             </button>
             <h4 class="enquiry-title">Make an enquiry</h4>
             <textarea class="enquiry-input" placeholder="type" [(ngModel)]="enquiryText"></textarea>
-            <button class="submit-btn" (click)="onSubmit(); modal.close()">
+            <button class="submit-btn" (click)="onSubmit(submitContent); modal.close()">
                 Submit
+            </button>
+        </div>
+    </ng-template>
+    <ng-template #submitContent let-modal>
+        <div class="submit-modal custom-modal">
+            <button class="close-btn" aria-label="Close" (click)="modal.dismiss()">
+                &times;
+            </button>
+            <h4 class="enquiry-title">Thank you for your enquiry</h4>
+            <h5 class="subtitle">We will be in touch shortly</h5>
+            <button class="submit-btn" (click)="modal.close()">
+                Close
             </button>
         </div>
     </ng-template>

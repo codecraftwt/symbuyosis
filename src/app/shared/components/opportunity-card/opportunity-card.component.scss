@@ -96,7 +96,7 @@
 
   .enquiry-modal {
       position: relative;
-      background: #fff;
+      background: $white;
       border-radius: 8px;
       padding: 24px;
       width: 100%;
@@ -126,7 +126,7 @@
     .enquiry-input {
       width: 100%;
       min-height: 100px;
-      border: 1px solid #ddd;
+      border: 1px solid $light-border-gray;
       border-radius: 8px;
       padding: 8px 12px;
       font-size: 14px;
@@ -135,14 +135,14 @@
       transition: border-color .2s;
     }
     .enquiry-input:focus {
-      border-color: #888;
+      border-color: $dark-border-gray;
     }
     
     .submit-btn {
       align-self: flex-start;
       padding: 10px 24px;
-      background: #000;
-      color: #fff;
+      background: $primary-black;
+      color: $white;
       border: none;
       border-radius: 8px;
       font-size: 14px;
@@ -150,5 +150,33 @@
       transition: background .2s;
     }
     .submit-btn:hover {
-      background: #333;
+      background: $secondary-black;
+    }
+
+    .submit-modal{
+      position: relative;
+      background: $white;
+      border-radius: 8px;
+      padding: 24px;
+      width: 100%;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+       .close-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: transparent;
+        border: none;
+        font-size: 20px;
+        line-height: 1;
+        cursor: pointer;
+      }
+      .subtitle{
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 100%;
+      }
     }
