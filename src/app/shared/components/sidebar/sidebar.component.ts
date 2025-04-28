@@ -20,13 +20,13 @@ export class SidebarComponent implements OnInit {
   };
 
   menuItems = [
-    { name: 'Dashboard', icon: '', route: '/dashboard' },
-    { name: 'Opportunity', icon: '', route: '/opportunity' },
-    { name: 'Opportunities', icon: '', route: '/opportunities' },
-    { name: 'Post Opportunity', icon: '', route: '/post-an-opportunity' },
-    { name: 'Search Opportunities', icon: '', route: '/search-opportunities' },
-    { name: 'Menu Item 3', icon: '', route: '/enquire-an-opportunity' },
-    { name: 'Menu Item 4', icon: '', route: '/menu4' },
+    { name: 'Dashboard', icon: '', route: '/layout/dashboard' },
+    { name: 'Create Opportunity', icon: '', route: '/layout/create-opportunity' },
+    { name: 'My Opportunities', icon: '', route: '/layout/my-opportunities' },
+    { name: 'Review Opportunity', icon: '', route: '/layout/review-opportunity' },
+    { name: 'Search Opportunity', icon: '', route: '/layout/search-opportunity' },
+    { name: 'Menu Item 3', icon: '', route: '/layout/enquire-an-opportunity' },
+    { name: 'Menu Item 4', icon: '', route: '/layout/menu4' },
   ];
 
   ngOnInit(): void {
