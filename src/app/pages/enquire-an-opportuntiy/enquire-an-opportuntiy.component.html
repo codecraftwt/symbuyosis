@@ -1,2 +1,9 @@
-<app-opportunity-card [opportunities]="opportunities" [isEnquire]="true" [isPost]="false"
-    (bookmarkClicked)="onBookMarked($event)" (submitClicked)="onSubmit($event)"></app-opportunity-card>
+<div class="row">
+    <h1 class="h2 mb-3">{{ title }}</h1>
+    @for (opportunity of opportunities; track $index) {
+    <div class="col-lg-4 col-md-6 col-sm-12">
+        <app-opportunity-card [opportunities]="opportunity" [isEnquire]="true" [isPost]="false"
+            (bookmarkClicked)="onBookMarked($event)" (submitClicked)="onSubmit($event)"></app-opportunity-card>
+    </div>
+    }
+</div>

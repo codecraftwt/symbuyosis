@@ -10,8 +10,9 @@ import { OpportunityCardComponent } from "../../shared/components/opportunity-ca
 })
 export class PostAnOpportunityComponent implements OnInit {
 
-  public opportunities = {
-    title: 'Post an Opportunity',
+  public title = 'Post an Opportunity';
+
+  public opportunities = [{
     imageUrl: '../../../assets/images/post-an-opportunity.jpg',
     tagline: 'Hand Knitted Socks',
     description: 'Full length hand-knitted socks made from certified Shetland wool.',
@@ -24,7 +25,7 @@ export class PostAnOpportunityComponent implements OnInit {
     volumeMonthly: 100,
     datePosted: '25-04-2025',
     link: 'https://www.thedorothydays.com/products/natural-shetland-hand-knitted-bed-socks-british-wool'
-  };
+  },]
 
   constructor() { }
 
