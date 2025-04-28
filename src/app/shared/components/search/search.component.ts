@@ -12,14 +12,14 @@ import { FormsModule } from '@angular/forms';
 export class SearchComponent {
   // Dummy Data for Categories and Subcategories
   categories = ['Electronics', 'Clothing', 'Books'];
-  regions = ['United Kingdom', 'United States', 'France','Germany'];
+  regions = ['United Kingdom', 'United States', 'France', 'Germany'];
   subcategories: { [key: string]: string[] } = {
     Electronics: ['Phones', 'Laptops', 'Accessories'],
     Clothing: ['Shirts', 'Jeans', 'Jackets'],
     Books: ['Fiction', 'Non-Fiction', 'Comics']
   };
 
-  selectedCategory: 'Electronics' | 'Clothing' | 'Books' = 'Electronics';
+  selectedCategory: string = '';
   selectedSubcategory: string = '';
   selectedRegion: string = '';
 
