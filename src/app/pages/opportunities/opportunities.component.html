@@ -1,13 +1,13 @@
-<div class="d-flex justify-content-start align-items-center">
-    <div class="d-flex align-items-center">
+<div class="d-flex justify-content-start align-items-center gap-4">
+    <div class="d-flex align-items-center gap-3">
         <h1 class="h2">Posted Opportunities</h1>
-        <h5 class="count-title mx-5 mb-0">
+        <h5 class="count-title ms-2 mb-0">
             Posted
             <span class="count">{{ postedOpportunities }}</span>
         </h5>
     </div>
 
-    <div class="d-flex align-items-center ms-5">
+    <div class="d-flex align-items-center ms-0 gap-3">
         <div class="form-group">
             <select id="category" class="form-select" [(ngModel)]="selectedPostedOpportunity">
                 <option value="" disabled selected>Category</option>
@@ -16,8 +16,16 @@
                 }
             </select>
         </div>
+        <div class="form-group ms-0">
+            <select id="category" class="form-select" [(ngModel)]="selectedfilterValue">
+                <option value="" disabled selected>Filter</option>
+                @for (data of filter; track $index) {
+                <option [value]="data">{{ data }}</option>
+                }
+            </select>
+        </div>
 
-        <button class="btn btn-outline-dark ms-5">
+        <button class="btn btn-outline-dark ms-0">
             Create New Opportunity
         </button>
     </div>

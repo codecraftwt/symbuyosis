@@ -14,8 +14,10 @@ export class OpportunitiesComponent {
   public postedOpportunities = 8;
   public engagedOpportunities = 4;
   public selectedPostedOpportunity = '';
+  public selectedfilterValue = '';
   public selectedEnagagedOpportunity = '';
   public categories = ['Inserts', 'Email Inserts', 'Packaging', 'Outside print', 'Stamp'];
+  public filter = ['All' ,'Active','Inactive','Date' ];
   public cardsData = [
     { id: 1, title: 'Card Placeholder', image: '../../../../assets/images/Hand_Knitted_Socks.jpg' },
     { id: 2, title: 'Card Placeholder', image: '../../../../assets/images/Shea_Butter_Body_Cream.jpg' },
