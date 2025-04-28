@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { OpportunityCardComponent } from "../../shared/components/opportunity-card/opportunity-card.component";
+import { SearchComponent } from "../../shared/components/search/search.component";
 @Component({
   selector: 'app-enquire-an-opportuntiy',
   standalone: true,
-  imports: [OpportunityCardComponent],
+  imports: [OpportunityCardComponent, SearchComponent],
   templateUrl: './enquire-an-opportuntiy.component.html',
   styleUrl: './enquire-an-opportuntiy.component.scss'
 })
