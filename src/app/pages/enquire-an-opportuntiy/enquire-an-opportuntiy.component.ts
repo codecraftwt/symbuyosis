@@ -50,7 +50,7 @@ export class EnquireAnOpportuntiyComponent {
     volumeMonthly: 100,
     datePosted: '25-04-2025',
     link: 'https://www.thedorothydays.com/products/natural-shetland-hand-knitted-bed-socks-british-wool'
-  }
+  },
   ]
 
   protected onBookMarked(event: any) { }
