@@ -10,16 +10,16 @@ import { RouterModule } from '@angular/router';
 })
 export class SidebarComponent implements OnInit {
 
-  isCollapsed2: boolean = false;
-  @Input() isCollapsed: boolean = false;
-  @Output() toggleCollapse = new EventEmitter<void>();
+  public isCollapsed2: boolean = false;
+  @Input() public isCollapsed: boolean = false;
+  @Output() public toggleCollapse = new EventEmitter<void>();
 
-  user = {
+  public user = {
     name: 'John Smith',
     company: 'Company',
   };
 
-  menuItems = [
+  public menuItems = [
     { name: 'Dashboard', icon: '', route: '/layout/dashboard' },
     { name: 'Create Opportunity', icon: '', route: '/layout/create-opportunity' },
     { name: 'My Opportunities', icon: '', route: '/layout/my-opportunities' },
@@ -35,24 +35,24 @@ export class SidebarComponent implements OnInit {
     }
   }
 
-  onToggleCollapse() {
+  protected onToggleCollapse() {
     this.toggleCollapse.emit();
   }
 
-  mouseover() {
+  protected mouseover() {
     if (this.isCollapsed) {
       this.isCollapsed2 = false;
     }
   }
 
-  mouseout() {
+  protected mouseout() {
     if (this.isCollapsed) {
       this.isCollapsed2 = true;
     }
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: UIEvent) {
+  protected onResize(event: UIEvent) {
     const w = (event.target as Window).innerWidth;
     this.updateCollapseState(w);
   }

@@ -12,7 +12,7 @@ import { FooterComponent } from "../../shared/components/footer/footer.component
   styleUrl: './main-layout.component.scss'
 })
 export class MainLayoutComponent implements OnInit {
-  isCollapsed = false;
+  public isCollapsed = false;
 
   ngOnInit(): void {
     if (typeof window !== 'undefined') {
@@ -20,17 +20,17 @@ export class MainLayoutComponent implements OnInit {
     }
   }
 
-  toggleCollapse() {
+  protected toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: UIEvent) {
+  protected onResize(event: UIEvent) {
     const w = (event.target as Window).innerWidth;
     this.updateCollapseState(w);
   }
 
-  updateCollapseState(width: number) {
+  protected updateCollapseState(width: number) {
     const shouldBeCollapsed = width < 1025;
     this.isCollapsed = shouldBeCollapsed;
   }

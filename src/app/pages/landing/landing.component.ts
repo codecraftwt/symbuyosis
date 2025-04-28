@@ -7,13 +7,13 @@ import { SearchComponent } from '../../shared/components/search/search.component
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CardGridComponent,ParagraphComponent,PromoPanelComponent,SearchComponent],
+  imports: [CardGridComponent, ParagraphComponent, PromoPanelComponent, SearchComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })
 export class LandingComponent {
 
-  cardsData = [
+  public cardsData = [
     { id: 1, title: 'Card Placeholder', image: '../../../../assets/images/Hand_Knitted_Socks.jpg' },
     { id: 2, title: 'Card Placeholder', image: '../../../../assets/images/Shea_Butter_Body_Cream.jpg' },
     { id: 3, title: 'Card Placeholder', image: '../../../../assets/images/Hand_Knitted_Socks.jpg' },

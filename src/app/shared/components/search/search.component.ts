@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -10,18 +11,24 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './search.component.scss'
 })
 export class SearchComponent {
-  // Dummy Data for Categories and Subcategories
-  categories = ['Electronics', 'Clothing', 'Books'];
-  regions = ['United Kingdom', 'United States', 'France', 'Germany'];
-  subcategories: { [key: string]: string[] } = {
+
+  public categories = ['Electronics', 'Clothing', 'Books', 'Confectionary'];
+  public regions = ['United Kingdom', 'United States', 'France', 'Germany'];
+  public subcategories: { [key: string]: string[] } = {
     Electronics: ['Phones', 'Laptops', 'Accessories'],
     Clothing: ['Shirts', 'Jeans', 'Jackets'],
-    Books: ['Fiction', 'Non-Fiction', 'Comics']
+    Books: ['Fiction', 'Non-Fiction', 'Comics'],
+    Confectionary: ['Sweets']
   };
 
-  selectedCategory: string = '';
-  selectedSubcategory: string = '';
-  selectedRegion: string = '';
+  public selectedCategory: string = '';
+  public selectedSubcategory: string = '';
+  public selectedRegion: string = '';
 
-  onSearch(): void { }
+  constructor(private _router: Router) { }
+
+  protected onSearch(): void {
+    this._router.navigate(['/layout/search-results'])
+  }
+
 }

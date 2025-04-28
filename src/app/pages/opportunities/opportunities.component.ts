@@ -11,17 +11,17 @@ import { FormsModule } from '@angular/forms';
 })
 export class OpportunitiesComponent {
 
-  postedOpportunities = 8;
-  engagedOpportunities = 4;
-  selectedPostedOpportunity = '';
-  selectedEnagagedOpportunity = '';
-  categories = ['Inserts', 'Email Inserts', 'Packaging', 'Outside print', 'Stamp'];
-  cardsData = [
+  public postedOpportunities = 8;
+  public engagedOpportunities = 4;
+  public selectedPostedOpportunity = '';
+  public selectedEnagagedOpportunity = '';
+  public categories = ['Inserts', 'Email Inserts', 'Packaging', 'Outside print', 'Stamp'];
+  public cardsData = [
     { id: 1, title: 'Card Placeholder', image: '../../../../assets/images/Hand_Knitted_Socks.jpg' },
     { id: 2, title: 'Card Placeholder', image: '../../../../assets/images/Shea_Butter_Body_Cream.jpg' },
     { id: 3, title: 'Card Placeholder', image: '../../../../assets/images/Hand_Made_Silk_Cushions.jpg' },
   ]
-  engagedcardsData = [
+  public engagedcardsData = [
     { id: 1, title: 'Card Placeholder', image: '../../../../assets/images/Custom_Baby_Sweater.jpg' },
     { id: 2, title: 'Card Placeholder', image: '../../../../assets/images/Artwork.jpg' },
     { id: 3, title: 'Card Placeholder', image: '../../../../assets/images/Ethnic_Cushion.jpg' },

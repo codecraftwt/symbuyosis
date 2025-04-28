@@ -11,7 +11,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
   styleUrl: './custom-select.component.scss',
 })
 export class CustomSelectComponent {
-  @Input() label!: string;
-  @Input() items: string[] = [];
-  @Input() control!: FormControl;
+  @Input() public label!: string;
+  @Input() public items: string[] = [];
+  @Input() public control!: FormControl;
 }

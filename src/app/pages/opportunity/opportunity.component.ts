@@ -7,23 +7,23 @@ import { CustomSelectComponent } from '../../shared/components/custom-select/cus
 @Component({
   selector: 'app-opportunity',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NgSelectModule,CustomSelectComponent],
+  imports: [CommonModule, ReactiveFormsModule, NgSelectModule, CustomSelectComponent],
   templateUrl: './opportunity.component.html',
   styleUrl: './opportunity.component.scss'
 })
 export class OpportunityComponent implements OnInit {
-  @ViewChildren('titleInput, descriptionInput') 
-  formElements!: QueryList<ElementRef>;
+  @ViewChildren('titleInput, descriptionInput')
+  public formElements!: QueryList<ElementRef>;
 
-  opportunityForm!: FormGroup;
-  maxCheckboxSelection = 2;
-  minEndDate: string | null = null;
+  public opportunityForm!: FormGroup;
+  public maxCheckboxSelection = 2;
+  public minEndDate: string | null = null;
 
-  primaryCategoryOptions = ['Men', 'Woman'];
-  regionOptions = ['Europe', 'USA'];
-  formatTypeOptions = ['Inserts', 'Email Inserts', 'Packaging', 'Outside print', 'Stamp'];
+  public primaryCategoryOptions = ['Men', 'Woman'];
+  public regionOptions = ['Europe', 'USA'];
+  public formatTypeOptions = ['Inserts', 'Email Inserts', 'Packaging', 'Outside print', 'Stamp'];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.opportunityForm = this.fb.group({
@@ -49,22 +49,22 @@ export class OpportunityComponent implements OnInit {
     }, {
       validators: this.dateRangeValidator // attach the date logic
     });
-  
+
   }
 
-  minSelectedCheckboxes(min: number): ValidatorFn {
+  protected minSelectedCheckboxes(min: number): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
       const formArray = control as FormArray;
       const selectedCount = formArray.controls.length;
       return selectedCount >= min ? null : { minCheckboxes: true };
     };
   }
-  
 
-  dateRangeValidator(formGroup: FormGroup) {
+
+  protected dateRangeValidator(formGroup: FormGroup) {
     const start = formGroup.get('startDate')?.value;
     const end = formGroup.get('endDate')?.value;
-  
+
     if (start && end && new Date(start) > new Date(end)) {
       return { invalidDateRange: true };
     }
@@ -78,13 +78,13 @@ export class OpportunityComponent implements OnInit {
     return this.extraLinks.controls as FormControl[];
   }
 
-  addExtraLink(): void {
+  protected addExtraLink(): void {
     this.extraLinks.push(this.fb.control(''));
   }
-  removeExtraLink(index: number): void {
+  protected removeExtraLink(index: number): void {
     this.extraLinks.removeAt(index);
   }
-  
+
 
   get primaryCategories(): FormArray {
     return this.opportunityForm.get('primaryCategories') as FormArray;
@@ -109,11 +109,11 @@ export class OpportunityComponent implements OnInit {
   get customerTypeControl(): FormControl {
     return this.opportunityForm.get('customerType') as FormControl;
   }
-  
+
   get productTypeControl(): FormControl {
     return this.opportunityForm.get('productType') as FormControl;
   }
-  
+
   get subProductTypeControl(): FormControl {
     return this.opportunityForm.get('subProductType') as FormControl;
   }
@@ -122,7 +122,7 @@ export class OpportunityComponent implements OnInit {
     return this.opportunityForm.get('targetRegions') as FormControl;
   }
 
-  updateEndDateMin(): void {
+  protected updateEndDateMin(): void {
     const startDate = this.opportunityForm.get('startDate')?.value;
     if (startDate) {
       // Format to yyyy-MM-dd for the input
@@ -132,7 +132,7 @@ export class OpportunityComponent implements OnInit {
     }
   }
 
-  toggleCheckbox(controlArray: FormArray, value: string, maxSelection?: number): void {
+  protected toggleCheckbox(controlArray: FormArray, value: string, maxSelection?: number): void {
     const index = controlArray.value.indexOf(value);
     if (index !== -1) {
       // If already selected, remove it
@@ -144,16 +144,16 @@ export class OpportunityComponent implements OnInit {
     }
   }
 
-  isCheckboxDisabled(controlArray: FormArray, value: string): boolean {
+  protected isCheckboxDisabled(controlArray: FormArray, value: string): boolean {
     return controlArray.length >= this.maxCheckboxSelection && !controlArray.value.includes(value);
   }
 
-  onSubmit(): void {
+  protected onSubmit(): void {
     if (this.opportunityForm.invalid) {
       this.primaryCategories.markAsTouched();
       this.formatTypes.markAsTouched();
       this.opportunityForm.markAllAsTouched();
-  
+
       // Find all invalid fields
       setTimeout(() => {
         for (const el of this.formElements.toArray()) {
@@ -166,10 +166,10 @@ export class OpportunityComponent implements OnInit {
           }
         }
       });
-  
+
       return;
     }
-  
+
     console.log(this.opportunityForm.value);
   }
 }

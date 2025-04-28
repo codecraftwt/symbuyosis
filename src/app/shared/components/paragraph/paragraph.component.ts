@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './paragraph.component.scss'
 })
 export class ParagraphComponent {
-  @Input() heading: string = 'Welcome to SymbuyOsis';
-  @Input() description: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...';
+  @Input() public heading: string = 'Welcome to SymbuyOsis';
+  @Input() public description: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...';
 }

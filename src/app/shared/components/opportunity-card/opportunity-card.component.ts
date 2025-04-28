@@ -14,15 +14,15 @@ export class OpportunityCardComponent {
   private modalService = inject(NgbModal);
   public enquiryText = '';
 
-  @Input() opportunities: any;
-  @Input() isPost: boolean = false;
-  @Input() isEnquire: boolean = false;
+  @Input() public opportunities: any;
+  @Input() public isPost: boolean = false;
+  @Input() public isEnquire: boolean = false;
 
-  @Output() editClicked = new EventEmitter<void>();
-  @Output() saveDraftClicked = new EventEmitter<void>();
-  @Output() postClicked = new EventEmitter<void>();
-  @Output() submitClicked = new EventEmitter<string>();
-  @Output() bookmarkClicked = new EventEmitter<void>();
+  @Output() public editClicked = new EventEmitter<void>();
+  @Output() public saveDraftClicked = new EventEmitter<void>();
+  @Output() public postClicked = new EventEmitter<void>();
+  @Output() public submitClicked = new EventEmitter<string>();
+  @Output() public bookmarkClicked = new EventEmitter<void>();
 
   protected onEdit() {
     this.editClicked.emit();
