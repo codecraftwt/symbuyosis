@@ -3,6 +3,7 @@ import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Reacti
 import { CommonModule } from '@angular/common';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CustomSelectComponent } from '../../shared/components/custom-select/custom-select.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-opportunity',
@@ -23,7 +24,7 @@ export class OpportunityComponent implements OnInit {
   public regionOptions = ['Europe', 'USA'];
   public formatTypeOptions = ['Inserts', 'Email Inserts', 'Packaging', 'Outside print', 'Stamp'];
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private _router: Router) { }
 
   ngOnInit(): void {
     this.opportunityForm = this.fb.group({
@@ -149,6 +150,7 @@ export class OpportunityComponent implements OnInit {
   }
 
   protected onSubmit(): void {
+    this._router.navigate(['layout/review-opportunity']);
     if (this.opportunityForm.invalid) {
       this.primaryCategories.markAsTouched();
       this.formatTypes.markAsTouched();
