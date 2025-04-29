@@ -26,7 +26,7 @@ export class SidebarComponent implements OnInit {
     { name: 'Review Opportunity', icon: '', route: '/layout/review-opportunity' },
     { name: 'Search Opportunity', icon: '', route: '/layout/search-opportunity' },
     { name: 'Search results', icon: '', route: '/layout/search-results' },
-    { name: 'Menu Item 4', icon: '', route: '/layout/menu4' },
+    { name: 'Help', icon: '', route: '/layout/menu4' },
   ];
 
   ngOnInit(): void {

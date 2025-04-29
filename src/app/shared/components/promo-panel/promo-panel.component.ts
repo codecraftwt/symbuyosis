@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './promo-panel.component.scss'
 })
 export class PromoPanelComponent {
-  @Input() public heading: string = 'Welcome to SymbuyOsis';
-  @Input() public description: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...';
-  @Input() public buttonText: string = 'Button';
+  @Input() public heading: string = '';
+  @Input() public description: string = '';
+  @Input() public buttonText: string = '';
 }

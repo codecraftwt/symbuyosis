@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
     {
-        path: '', redirectTo: 'create-account', pathMatch: 'full'
+        path: '', redirectTo: 'web-layout', pathMatch: 'full'
     },
     {
         path: 'create-account',
@@ -11,6 +11,19 @@ export const routes: Routes = [
     {
         path: 'login',
         loadComponent: () => import('./auth/components/login/login.component').then(c => c.LoginComponent)
+    },
+    {
+        path:'web-layout',
+        loadComponent: () => import('./layout/web-layout/web-layout.component').then(c => c.WebLayoutComponent),
+        children: [
+            {
+                path:'',redirectTo:'about-us',pathMatch:'full'
+            },
+            {
+                path:'about-us',
+                loadComponent: () => import('./pages/about-us/about-us.component').then(c => c.AboutUsComponent)
+            }
+        ]
     },
     {
         path: 'layout',
@@ -49,32 +62,4 @@ export const routes: Routes = [
             },
         ]
     },
-    // {
-    //     path: 'home',
-    //     loadComponent: () => import('./pages/landing/landing.component').then(c => c.LandingComponent)
-    // },
-    // {
-    //     path: 'dashboard',
-    //     loadComponent: () => import('./pages/dashboard/dashboard.component').then(c => c.DashboardComponent)
-    // },
-    // {
-    //     path: 'create-opportunity',
-    //     loadComponent: () => import('./pages/opportunity/opportunity.component').then(c => c.OpportunityComponent)
-    // },
-    // {
-    //     path: 'my-opportunities',
-    //     loadComponent: () => import('./pages/opportunities/opportunities.component').then(c => c.OpportunitiesComponent)
-    // },
-    // {
-    //     path: 'review-opportunity',
-    //     loadComponent: () => import('./pages/post-an-opportunity/post-an-opportunity.component').then(c => c.PostAnOpportunityComponent)
-    // },
-    // {
-    //     path: 'enquire-an-opportunity',
-    //     loadComponent: () => import('./pages/enquire-an-opportuntiy/enquire-an-opportuntiy.component').then(c => c.EnquireAnOpportuntiyComponent)
-    // },
-    // {
-    //     path: 'search-opportunity',
-    //     loadComponent: () => import('./pages/search-opportunities/search-opportunities.component').then(c => c.SearchOpportunitiesComponent)
-    // },
 ];
