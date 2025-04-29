@@ -13,14 +13,14 @@ export const routes: Routes = [
         loadComponent: () => import('./auth/components/login/login.component').then(c => c.LoginComponent)
     },
     {
-        path:'web-layout',
+        path: 'web-layout',
         loadComponent: () => import('./layout/web-layout/web-layout.component').then(c => c.WebLayoutComponent),
         children: [
             {
-                path:'',redirectTo:'about-us',pathMatch:'full'
+                path: '', redirectTo: 'about-us', pathMatch: 'full'
             },
             {
-                path:'about-us',
+                path: 'about-us',
                 loadComponent: () => import('./pages/about-us/about-us.component').then(c => c.AboutUsComponent)
             }
         ]

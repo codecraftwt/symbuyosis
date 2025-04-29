@@ -6,7 +6,7 @@ import { FooterComponent } from '../../shared/components/footer/footer.component
 @Component({
   selector: 'app-web-layout',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent,  FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
   templateUrl: './web-layout.component.html',
   styleUrl: './web-layout.component.scss'
 })
