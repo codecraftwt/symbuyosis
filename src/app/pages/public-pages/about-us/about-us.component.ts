@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PromoPanelComponent } from "../../shared/components/promo-panel/promo-panel.component";
+import { PromoPanelComponent } from '../../../shared/components/promo-panel/promo-panel.component';
 
 @Component({
   selector: 'app-about-us',

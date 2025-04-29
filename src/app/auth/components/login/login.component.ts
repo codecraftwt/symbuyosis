@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   public accountForm!: FormGroup;
+  private _authService = inject(AuthService);
 
   constructor(private _fb: FormBuilder, private _router: Router) { }
 
@@ -21,10 +23,8 @@ export class LoginComponent {
   protected onLogin() {
     this._router.navigate(['layout/']);
     if (this.accountForm.valid) {
-      console.log('Form submitted:', this.accountForm.value);
-      // Add your form submission logic here
+      this._authService.login(this.email.value, this.password.value);
     } else {
-      // Mark all fields as touched to trigger validation messages
       Object.keys(this.accountForm.controls).forEach(key => {
         const control = this.accountForm.get(key);
         control?.markAsTouched();

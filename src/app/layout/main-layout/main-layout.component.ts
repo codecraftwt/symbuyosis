@@ -34,4 +34,8 @@ export class MainLayoutComponent implements OnInit {
     const shouldBeCollapsed = width < 1025;
     this.isCollapsed = shouldBeCollapsed;
   }
+
+  protected isLoggedIn(): boolean {
+    return true;
+  }
 }

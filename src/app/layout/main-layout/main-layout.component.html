@@ -1,12 +1,33 @@
 <app-header></app-header>
 
 <div class="app-container">
-    <app-sidebar [isCollapsed]="isCollapsed" (toggleCollapse)="toggleCollapse()"></app-sidebar>
-    <div class="main-content" [class.collapsed]="isCollapsed">
-      <div class="content-wrapper">
-        <router-outlet></router-outlet>
-      </div>
-      <app-footer></app-footer>
+  <app-sidebar [isCollapsed]="isCollapsed" (toggleCollapse)="toggleCollapse()"></app-sidebar>
+  <div class="main-content" [class.collapsed]="isCollapsed">
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
     </div>
+    <app-footer></app-footer>
   </div>
-  
+</div>
+
+<!-- <app-header></app-header>
+@if (isLoggedIn()){
+<div class="app-container">
+  <app-sidebar [isCollapsed]="isCollapsed" (toggleCollapse)="toggleCollapse()"></app-sidebar>
+  <div class="main-content" [class.collapsed]="isCollapsed">
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>
+} @else {
+<div class="app-container">
+  <div class="main-content">
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>
+} -->
