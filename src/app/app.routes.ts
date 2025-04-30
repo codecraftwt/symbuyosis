@@ -16,6 +16,32 @@ export const routes: Routes = [
     {
         path: 'home',
         loadComponent: () => import('./layout/web-layout/web-layout.component').then(c => c.WebLayoutComponent), // public page
+        children: [
+            {
+                path: 'about-us',
+                loadComponent: () => import('./pages/public-pages/about-us/about-us.component').then(c => c.AboutUsComponent)
+            },
+            {
+                path: 'pricing',
+                loadComponent: () => import('./pages/public-pages/pricing/pricing.component').then(c => c.PricingComponent)
+            },
+            {
+                path: 'use-case',
+                loadComponent: () => import('./pages/public-pages/use-case/use-case.component').then(c => c.UseCaseComponent)
+            },
+            {
+                path: 'new-options',
+                loadComponent: () => import('./pages/public-pages/new-options/new-options.component').then(c => c.NewOptionsComponent)
+            },
+            {
+                path: 'campaign-managers',
+                loadComponent: () => import('./pages/public-pages/campaign-managers/campaign-managers.component').then(c => c.CampaignManagersComponent)
+            },
+            {
+                path: 'small-busines-connect',
+                loadComponent: () => import('./pages/public-pages/small-busines-connect/small-busines-connect.component').then(c => c.SmallBusinesConnectComponent)
+            },
+        ]
     },
     {
         path: 'layout',
@@ -68,10 +94,6 @@ export const routes: Routes = [
     // {
     //     path: 'home',  // Public page
     //     loadComponent: () => import('./pages/landing/landing.component').then(c => c.LandingComponent)
-    // },
-    // {
-    //     path: 'about-us',  // Public page
-    //     loadComponent: () => import('./pages/about-us/about-us.component').then(c => c.AboutUsComponent)
     // },
     // {
     //     path: 'dashboard',

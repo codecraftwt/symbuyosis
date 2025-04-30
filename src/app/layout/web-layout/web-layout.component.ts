@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, HostListener } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { HomeComponent } from "../../pages/public-pages/home/home.component";
@@ -19,4 +19,26 @@ import { UseCaseComponent } from "../../pages/public-pages/use-case/use-case.com
 })
 export class WebLayoutComponent {
 
+  constructor(private _router: Router) {}
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event): void {
+    const sections = [
+      { id: 'about-us', route: '/home/about-us' },
+      { id: 'services', route: '/home/services' },
+      { id: 'use-case', route: '/home/use-case' },
+      { id: 'pricing', route: '/home/pricing' },
+      { id: 'blog', route: '/home/blog' }
+    ];
+
+    sections.forEach(section => {
+      const element = document.getElementById(section.id);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+          this._router.navigate([section.route]); // Update the route when section is in view
+        }
+      }
+    });
+  }
 }

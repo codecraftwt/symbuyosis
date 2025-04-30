@@ -24,4 +24,9 @@
       line-height: 100%;
       letter-spacing: 0%;
     }
+    .nav-link {
+      &.active {
+        color: $blue2;
+      }
+    }
 }
